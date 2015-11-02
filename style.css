@@ -1,0 +1,84 @@
+    .myButton {
+        background-color:transparent;
+        border:2px solid white;
+        display:inline-block;
+        cursor:pointer;
+        color:white;
+        font-family:'Montserrat', sans-serif;
+        font-size:26px;
+        font-weight:bold;
+        padding:17px 59px;
+        text-decoration:none;
+    }
+    
+    .myButton:hover {
+        background-color:rgba(25,25,25,0.50);
+    }
+    
+    .v-center {
+        margin-top: 5%;
+    }
+    
+    .response {
+        margin-top: 30px;
+    }
+    
+    .v-center-2 {
+        position: relative;
+        top: 20%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-transform: translateY(60%);
+        -ms-transform: translateY(60%);
+        transform: translateY(60%);
+    }
+   
+    .v-center-text {
+        position: relative;
+        top: 70%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-transform: translateY(60%);
+        -ms-transform: translateY(60%);
+        transform: translateY(60%);
+    }
+   
+    .alto{
+        height: 200px;    
+    }
+    
+    .alto-text{
+        height: 400px;    
+    }
+    
+    .mycontainer {
+        position: fixed;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    body {
+        font-family:'Montserrat', sans-serif;
+        background-image: url(http://www.crvdmedia.com/crvd/wp-content/uploads/2013/02/Wood_Background.jpg);
+        background-repeat: no-repeat;
+    }
+    
+    .text{
+        position: relative;
+        bottom: 0 !important;
+        display:inline-block;
+        width: 50%;
+        font-weight:bold;
+        color:white;
+        letter-spacing:1pt;
+        word-spacing:2pt;
+        font-size:80px;
+        text-align:center;
+        font-family:'Montserrat', sans-serif;
+        line-height:1;
+    }
+    
+        
+    
