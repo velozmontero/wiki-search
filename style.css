@@ -60,7 +60,7 @@
     
     body {
         font-family:'Montserrat', sans-serif;
-        background-image: url(http://www.crvdmedia.com/crvd/wp-content/uploads/2013/02/Wood_Background.jpg);
+        background-image: url(http://velozmontero.fvi-grad.com/wiki-search/Background.jpg);
         background-repeat: no-repeat;
     }
     
@@ -95,7 +95,7 @@
     }
     
     .clearable{
-        background: url(X.png) no-repeat right -25px center;
+        background: url(http://velozmontero.fvi-grad.com/wiki-search/X.png) no-repeat right -25px center;
         padding: 3px 42px 3px 4px;     /* Use the same right padding (42) in jQ! */
         transition: background 0.4s;
     }
