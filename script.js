@@ -30,7 +30,7 @@ $(document).ready(function(){
    
     function getResult() {
         $.getJSON(
-            "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exsentences=2&exlimit=10&exintro=&titles=Main%20Page&generator=search&gsrsearch="+requestedInfo.value+"&callback=?",
+            "http://en.wikipedia.org/w/api.php?action=query&prop=extracts|info&format=json&exsentences=2&exlimit=20&exintro=&inprop=url&titles=Main%20Page&generator=search&gsrsearch="+requestedInfo.value+"&callback=?",
             function(res) {
                 if (!res.hasOwnProperty("query") ) {
                         $("#result-container").addClass("hidden");
@@ -51,7 +51,7 @@ $(document).ready(function(){
                     var pagesX= res.query.pages;
                 
                     for (var x in pagesX){   
-                        $('#result').append("<li data-id='"+pagesX[x].pageid+"'>"+"<a>"+"<span class='links'>"+pagesX[x].title+"<br>"+pagesX[x].extract+"<br>"+"</span>"+"</a>"+"</li>");
+                        $('#result').append("<li data-id='"+pagesX[x].pageid+"'>"+"<a target='_blank' href="+pagesX[x].fullurl+">"+"<span class='links'>"+pagesX[x].title+"<br>"+pagesX[x].extract+"<br>"+"</span>"+"</a>"+"</li>");
                         console.log(pagesX[x].title);
                         console.log(pagesX[x].pageid);
                         console.log(pagesX[x].extract);      
@@ -83,7 +83,7 @@ $(document).ready(function(){
         }  
     });
     
-    $("#result").on("click", "li", function(){
+    /*$("#result").on("click", "li", function(){
         
         var selectedLink= $(this).attr("data-id");
         console.log("selectedLink: "+selectedLink);
@@ -99,6 +99,6 @@ $(document).ready(function(){
                 }
             }        
         ); 
-    });
+    });*/
     
 });
