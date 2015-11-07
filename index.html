@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <link rel="stylesheet" type="text/css" href="style.css">
     
-       
         <link rel="stylesheet" href="flexslider.css" type="text/css">
         
         <!-- Place somewhere in the <head> of your document -->
@@ -27,7 +26,15 @@
         <!-- Place in the <head>, after the three links -->
         <script type="text/javascript" charset="utf-8">
           $(window).load(function() {
-            $('.flexslider').flexslider();
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    directionNav: false,
+                    controlNav: false,
+                    direction: "vertical",
+                    slideshowSpeed: 2500,
+                    animationSpeed: 500,
+                    smoothHeight: false
+                });
           });
         </script>
    
@@ -47,13 +54,13 @@
                     <div class="flexslider" id="lucky" name="lucky">
                       <ul class="slides">
                         <li class="">
-                          <h1 id="slide1" name="slide1" class="feeling-lucky transition">"I'm Feeling Lucky"</h1>
+                          <h1 id="slide1" name="slide1" class="feeling-lucky transition">" I'm Feeling Lucky "</h1>
                         </li>
-                        <li class="flex-active-slide">
-                          <h1 id="slide2" name="slide2" class="feeling-lucky transition">"I'm Feeling happy"</h1>
+                        <li class="">
+                          <h1 id="slide2" name="slide2" class="feeling-lucky transition">" I'm Happy "</h1>
                         </li>
-                        <li class="clone" aria-hidden="true" style="display: block;">
-                          <h1 id="slide3" name="slide3" class="feeling-lucky transition">"I'm Feeling strong"</h1>
+                        <li class="" aria-hidden="true" style="display: block;">
+                          <h1 id="slide3" name="slide3" class="feeling-lucky transition">" I'm Strong "</h1>
                         </li>
                       </ul>
                     </div>
