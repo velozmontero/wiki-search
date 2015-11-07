@@ -51,7 +51,7 @@ $(document).ready(function(){
                     var pagesX= res.query.pages;
                 
                     for (var x in pagesX){   
-                        $('#result').append("<li data-id='"+pagesX[x].pageid+"'>"+"<a target='_blank' href="+pagesX[x].fullurl+">"+"<span class='links'>"+pagesX[x].title+"<br>"+pagesX[x].extract+"<br>"+"</span>"+"</a>"+"</li>");
+                        $('#result').append("<li data-id='"+pagesX[x].pageid+"'>"+"<a target='_blank' href='"+pagesX[x].fullurl+"'>"+"<span class='links'>"+pagesX[x].title+"<br>"+pagesX[x].extract+"<br>"+"</span>"+"</a>"+"</li>");
                         console.log(pagesX[x].title);
                         console.log(pagesX[x].pageid);
                         console.log(pagesX[x].extract);      
@@ -83,22 +83,48 @@ $(document).ready(function(){
         }  
     });
     
-    /*$("#result").on("click", "li", function(){
+    $("#lucky").on("click", function(){
         
-        var selectedLink= $(this).attr("data-id");
-        console.log("selectedLink: "+selectedLink);
+        $('#result').html("");
         
-        $.getJSON(
-            "http://en.wikipedia.org/w/api.php?action=query&prop=info&format=json&inprop=url&pageids="+selectedLink+"&callback=?",
-            function(res) {
-                console.log(res);
-                var linkToGo= res.query.pages;
-                for (var x in linkToGo){
-                    console.log("fullurl: "+linkToGo[x].fullurl);
-                    $(location).attr('href',linkToGo[x].fullurl);  
-                }
-            }        
-        ); 
-    });*/
-    
+        if (!requestedInfo.value) {
+            $("#not-f").addClass("hidden");
+            $('#search').addClass('alert');
+            $('#result-container').addClass("hidden");
+            $('#result').html("");
+            $('#cont').addClass('vertical-center');
+        }
+        else{
+
+            $.getJSON(
+                "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exlimit=1&generator=search&gsrsearch="+requestedInfo.value+"&gsrlimit=1&callback=?",
+                function(res) {
+
+                    if (!res.hasOwnProperty("query") ) {
+                            $("#result-container").addClass("hidden");
+                            if ( !($('#cont').hasClass('vertical-center')) ) {
+                                $("#not-f").removeClass("hidden");
+                                $('#cont').addClass('vertical-center');
+                            }
+                            else {
+                                $("#not-f").removeClass("hidden");
+                            }
+                        }
+                    else{
+                        $('#cont').removeClass('vertical-center');
+                        $('#result-container').removeClass("hidden"); 
+                        $("#not-f").addClass("hidden");
+                        $('#search').removeClass('alert');
+
+                        console.log(res);
+                        var linkToGo= res.query.pages;
+
+                        for (var x in linkToGo){
+                            $('#result').append("<li data-id='"+linkToGo[x].pageid+"'>"+"<span class='links'>"+linkToGo[x].title+"<br>"+linkToGo[x].extract+"<br>"+"</span>"+"</li>");
+                        }
+                    }
+                }        
+            );
+        }
+    });
 });

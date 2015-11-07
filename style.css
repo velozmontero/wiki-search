@@ -1,3 +1,31 @@
+    .feeling-lucky{
+        display:inline-block;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 35px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        padding:17px 59px !important;
+        text-decoration:none; 
+        cursor: pointer;
+    }
+
+    .feeling-lucky:hover {
+        color: grey;
+        position: relative;
+    }
+    
+    #lucky{
+        overflow: hidden;
+        height: 100px;
+    }
+    
+    .transition{
+        position: relative;
+        transition: all 0.5s;
+    }
+
     .alert{
         background-color: rgba(197, 74, 74, 0.42) !important;
         transition: ease-in;
@@ -116,6 +144,12 @@
     
     .padit{
         padding-top: 20px;
+    }
+
+    .content-scroll{
+        margin-top: 40px;
+        height: 100%;
+        overflow-y: auto;
     }
     
     .b-color{
