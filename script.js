@@ -1,5 +1,17 @@
 $(document).ready(function(){
     
+   
+        $('.flexslider').flexslider({
+            animation: "slide",
+            directionNav: false,
+            controlNav: false,
+            direction: "vertical",
+            slideshowSpeed: 2500,
+            animationSpeed: 500,
+            smoothHeight: false
+        });
+   
+    
     var requestedInfo= document.getElementById("search");
          
     // CLEARABLE INPUT
